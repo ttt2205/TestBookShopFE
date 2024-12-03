@@ -1,0 +1,132 @@
+.footer {
+
+    .border_right {
+        border-right: 1px solid #000000;
+        padding-right: 20px;
+    }
+
+    .empty_space {
+        margin-bottom: 30px;
+        background-color: #ffffff;
+        padding: 10px;
+    }
+
+    background-color: #979797;
+    color: #979797;
+
+    /* Màu chữ */
+    .social-icons a {
+
+        color: #333;
+
+        padding: 10px 5px;
+    }
+
+    .d-flex {
+        display: flex;
+        align-items: center;
+        flex-wrap: nowrap;
+    }
+
+    .input-group {
+        display: flex;
+        flex-wrap: nowrap;
+
+        .form-control {
+            border-radius: 4px 0 0 4px;
+            padding: 10px;
+            background-color: #f5f5f5;
+            border: none;
+            margin-bottom: 15px;
+            flex-grow: 1;
+        }
+
+        .btn-warning {
+            background-color: #FFFF00;
+            border: none;
+            color: #000;
+            font-weight: bold;
+            padding: 10px 20px;
+            border-radius: 0 4px 4px 0;
+        }
+    }
+
+    label {
+        font-weight: bold;
+        color: #ffffff;
+        font-size: 1.2rem;
+        margin-bottom: 0;
+        white-space: nowrap;
+        margin-right: 15px;
+    }
+
+    .mr-2 {
+        margin-right: 10px;
+    }
+
+    h5 {
+        font-weight: bold;
+        margin-bottom: 15px;
+        color: #FFA500;
+    }
+
+    a {
+        color: #333;
+        text-decoration: none;
+        font-size: 18px;
+
+        &:hover {
+            color: #FFFF00;
+        }
+    }
+}
+
+.border_top {
+    border-radius: 10px;
+
+}
+
+@media only screen and (max-width: 479px) {
+    .footer {
+        .py-4 {
+            padding-top: 0 !important;
+            padding-bottom: 0 !important;
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        h5 {
+            margin-top: 15px;
+        }
+    }
+}
+
+/* Dành cho điện thoại lớn hơn hoặc bằng 480px */
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+    .footer {
+
+        h5 {
+            margin-top: 15px;
+        }
+
+    }
+
+}
+
+/* Dành cho tablet (màn hình từ 768px trở lên) */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .footer{
+        .border_right {
+            
+            margin-right: -1px;
+        }
+    }
+}
+
+/* Dành cho laptop nhỏ (màn hình từ 1024px trở lên) */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {}
+
+/* Dành cho desktop (màn hình từ 1200px trở lên) */
+@media only screen and (min-width: 1200px) {}

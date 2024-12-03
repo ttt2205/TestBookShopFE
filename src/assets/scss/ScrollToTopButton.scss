@@ -1,0 +1,83 @@
+/* CSS cho hiệu ứng lắc ngang */
+@keyframes shake-horizontal {
+
+    0%,
+    100% {
+        transform: translateX(0);
+        /* Vị trí ban đầu */
+    }
+
+    25% {
+        transform: translateX(-5px);
+        /* Dịch sang trái */
+    }
+
+    50% {
+        transform: translateX(5px);
+        /* Dịch sang phải */
+    }
+
+    75% {
+        transform: translateX(-5px);
+        /* Dịch sang trái */
+    }
+}
+
+/* CSS cho hiệu ứng lắc dọc */
+@keyframes shake-vertical {
+
+    0%,
+    100% {
+        transform: translateY(0);
+        /* Vị trí ban đầu */
+    }
+
+    25% {
+        transform: translateY(-5px);
+        /* Dịch lên */
+    }
+
+    50% {
+        transform: translateY(5px);
+        /* Dịch xuống */
+    }
+
+    75% {
+        transform: translateY(-5px);
+        /* Dịch lên */
+    }
+}
+
+/* Áp dụng hiệu ứng khi nút hiển thị */
+.scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.scroll-to-top.show {
+    opacity: 1;
+    visibility: visible;
+    animation: shake-horizontal 0.5s ease infinite;
+    /* Lắc ngang */
+    /* Đổi thành `shake-vertical` nếu muốn lắc dọc */
+}
+
+.scroll-to-top-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    background: #000;
+}

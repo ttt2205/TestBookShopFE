@@ -1,0 +1,261 @@
+:root {
+    --main-color: rgba(233, 227, 227, 0.66);
+    /* Màu chính */
+    --font-size: 16px;
+    /* Kích thước chữ */
+    --padding: 10px;
+    /* Khoảng cách */
+    --btn-buy-color: red;
+    --text-box-discount: red;
+    --btn-add-to-cart-color: white;
+    --link-color: #2489F4;
+}
+
+.shopping-cart-container {
+    width: 100%;
+    height: auto;
+
+    .shopping-cart-empty-content {
+        width: 90%;
+        height: 50vh;
+        margin: 0 auto;
+        background-color: var(--main-color);
+
+        .cart-empty {
+            width: 100%;
+            height: 100%;
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+    .shopping-cart-content {
+        width: 90%;
+        height: auto;
+        margin: 0 auto;
+        background-color: var(--main-color);
+
+        .cart-title-container {
+            width: 100%;
+            height: auto;
+
+            .cart-title-content {
+                width: 100%;
+                height: auto;
+                display: flex;
+                align-items: center;
+
+                h4,
+                p {
+                    margin: 0 0 0 10px;
+                }
+            }
+        }
+
+        .cart-info-container {
+            width: 100%;
+            height: auto;
+
+            .cart-info-content {
+                width: 100%;
+                height: auto;
+                margin: 1rem auto;
+
+                .product-of-cart-info-container {
+                    background-color: var(--main-color);
+
+                    .product-of-cart-info-content {
+                        width: 100%;
+                        height: auto;
+                        background-color: var(--main-color);
+
+                        .header-cart-item-container {
+                            background-color: white;
+                            width: 100%;
+                            height: auto;
+                            border-radius: 10px;
+
+                            .header-cart-item-content {
+                                background-color: white;
+                                width: 100%;
+                                height: auto;
+                            }
+                        }
+
+                        .product-cart-container-left {
+                            background-color: white;
+                            width: 100%;
+                            height: auto;
+                            margin-top: 1rem;
+                            border-radius: 10px;
+
+                            .product-cart-content-left {
+                                background-color: white;
+                                width: 100%;
+                                height: auto;
+                                border-radius: 10px;
+
+                                .product-cart-item {
+                                    padding: 20px 0 20px 0;
+                                    border-bottom: 0.2px solid rgba(0, 0, 0, 0.2);
+                                    width: 100%;
+                                    height: 25vh;
+
+                                    .product-item {
+                                        .item-img {
+                                            img {
+                                                position: relative;
+                                                top: 50%;
+                                                left: 50%;
+                                                transform: translate(-50%, -50%);
+                                                -ms-transform: translate(-50%, -50%);
+                                                width: 100%;
+                                                height: 100%;
+                                                object-fit: fill;
+                                            }
+                                        }
+
+                                        .item-info {
+                                            height: auto;
+                                            background-color: white;
+                                            display: flex;
+                                            flex-direction: column;
+                                            justify-content: space-between;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .total-right-container {
+                    background-color: var(--main-color);
+                    padding: 0;
+
+                    .total-right-content {
+                        width: 100%;
+                        height: auto;
+                        background-color: var(--main-color);
+                        border-radius: 10px;
+
+                        .promotion-right-container {
+                            background-color: white;
+                            width: 100%;
+                            height: auto;
+                            border-radius: 10px;
+                            padding-bottom: 0.5rem;
+
+                            .promotion-right-content {
+                                background-color: white;
+                                width: 94%;
+                                height: auto;
+                                margin: 0 auto;
+
+                                .promotion-matched {
+                                    width: 100%;
+                                    height: auto;
+
+                                    .quantity-matched {
+                                        width: 100%;
+                                        height: auto;
+                                        display: flex;
+                                    }
+                                }
+                            }
+                        }
+
+                        .payment-right-container {
+                            background-color: white;
+                            width: 100%;
+                            height: auto;
+                            border-radius: 10px;
+                            padding-bottom: 0.5rem;
+
+                            .payment-right-content {
+                                background-color: white;
+                                width: 94%;
+                                height: auto;
+                                margin: 0 auto;
+                            }
+                        }
+                    }
+                }
+
+                .detail-promotion-container {
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 100vw;
+                    height: 100vh;
+                    background-color: rgba(0, 0, 0, 0.5);
+                    /* Semi-transparent background */
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    z-index: 1000;
+                    /* Ensure it's above other elements */
+
+                    .detail-promotion-content {
+                        background-color: #fff;
+                        padding: 20px;
+                        border-radius: 8px;
+                        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+                        /* Optional shadow */
+                        height: 80vh;
+                        width: 40vw;
+                        /* Adjust width as needed */
+                        text-align: center;
+
+                        .scrollable-container {
+                            width: 100%;
+                            /* Set the width as needed */
+                            height: 60vh;
+                            /* Set the max height for the container */
+                            padding: 15px;
+                            border: 1px solid #ddd;
+                            border-radius: 8px;
+                            overflow-y: auto;
+                            /* Enable vertical scrolling */
+                            background-color: #f9f9f9;
+
+                            .promotion-item:hover {
+                                border: 1px solid blue;
+                            }
+                        }
+                    }
+                }
+
+                .modal-notice-container {
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 100vw;
+                    height: 100vh;
+                    background-color: rgba(0, 0, 0, 0.5);
+                    /* Semi-transparent background */
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    z-index: 1000;
+                    /* Ensure it's above other elements */
+
+                    .modal-notice-content {
+                        background-color: #fff;
+                        padding: 20px;
+                        border-radius: 8px;
+                        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+                        /* Optional shadow */
+                        min-height: 20vh;
+                        height: auto;
+                        width: 40vw;
+                        /* Adjust width as needed */
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    }
+}

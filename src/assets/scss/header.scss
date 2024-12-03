@@ -1,0 +1,361 @@
+.header {
+  width: 100%;
+  background-color: white;
+  padding-bottom: 10px;
+}
+
+.banner_header {
+  img {
+      width: 100vw; // Full chiều ngang màn hình
+      height: auto;
+  }
+}
+
+.carousel-indicators {
+li {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5); 
+  transition: background-color 0.3s ease;
+
+  &.active {
+    background-color: rgb(179, 30, 30); 
+  }
+}
+}
+
+
+.main-header {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 10px 10px;
+  border-bottom: 1px solid #ccc;
+
+  .logo-img {
+      max-width: 150px;
+      height: auto;
+      margin-left: 0px;
+      flex-shrink: 0; // Đảm bảo logo không co lại quá nhỏ
+      margin-right: 15px;
+  }
+
+  .search-box {
+      flex-grow: 1; // Thanh tìm kiếm chiếm nhiều không gian hơn
+
+      .input-group {
+          display: flex;
+          width: 100%;
+
+          .form-control {
+              flex: 1; // Chiều rộng tự động giãn
+          }
+
+          .search-button {
+              margin-left: 5px;
+              padding: 0.375rem 0.75rem;
+          }
+      }
+  }
+
+  .icon-group {
+      display: flex;
+      align-items: center;
+
+      .icon-wrapper {
+          margin-right: 20px;
+          color: black;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+
+          svg {
+              font-size: 1.5rem;
+              margin-right: 5px;
+          }
+
+          a {
+              text-decoration: none;
+              color: black;
+              display: flex;
+              align-items: center;
+          }
+      }
+
+      .icon-wrapper:last-child {
+          margin-right: 0; // Bỏ khoảng cách sau icon cuối cùng
+      }
+  }
+
+  .dropdown-menu-custom {
+      position: absolute;
+      top: 100%; // Xuất hiện ngay dưới icon menu
+      left: 0;
+      background-color: white;
+      border: 1px solid #ccc;
+      padding: 10px;
+      width: 250px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      z-index: 10;
+
+      ul {
+          list-style-type: none;
+          padding: 0;
+          margin: 0;
+
+          li {
+              padding: 8px 0;
+              cursor: pointer;
+
+              &:hover {
+                  color: #ff0000;
+              }
+          }
+      }
+
+      .hovered-category {
+          
+          margin-top: 10px;
+          height: auto;
+          width: 100%;
+          top: -10.5px;
+          left: 100%;
+          position: absolute;
+          padding: 10px;
+          border: 1px solid #ddd;
+          background-color: white;
+          min-height: 100px;
+          z-index: 1000;
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+          ul {
+              display: flex;
+              flex-wrap: wrap;
+              /* Đảm bảo các <li> có thể xuống dòng khi cần */
+              padding: 0;
+              margin: 0;
+              list-style: none;
+              width: 100%;
+
+              li {
+                  flex: 1 1 auto;
+                  text-align: center;
+                  padding: 10px;
+                  background-color: #f8f8f8;
+                  border-radius: 5px;
+                  transition: box-shadow 0.5s ease-in-out;
+                  white-space: nowrap;
+                  max-height: 50px;
+                  font-size: 18px;
+                  margin-top: 10px;
+                  &:hover {
+                      background-color: #ff0000;
+                      color: white;
+                      
+                      box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2); 
+                      transform: translateY(-3px);
+                  }
+              }
+          }
+      }
+  }
+}
+
+@media only screen and (max-width: 479px) {
+  .main-header {
+      .logo-img {
+          display: none;
+      }
+
+      .icon-group a {
+          span {
+              display: none;
+          }
+      }
+      .dropdown-menu-custom {
+          position: absolute;
+          top: 100%; // Xuất hiện ngay dưới icon menu
+          left: 0;
+          background-color: white;
+          border: 1px solid #ccc;
+          padding: 10px;
+          width: 370px;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          z-index: 10;
+          height: 500px;
+          overflow-y: auto;
+          max-height: 700px;
+          ul {
+              list-style-type: none;
+              padding: 0;
+              margin: 0;
+              display: flex;
+              li {
+                  padding: 8px ;
+                  cursor: pointer;
+  
+                  &:hover {
+                      color: #ff0000;
+                  }
+              }
+          }
+  
+          .hovered-category {
+              
+              margin-top: 10px;
+              height: auto;
+              width: 100%;
+              top: -10.5px;
+              left: 0%;
+              position: relative;
+              padding: 10px;
+              border: none;
+              background-color: white;
+              min-height: 100px;
+              z-index: 1000;
+              box-shadow: none;
+  
+              ul {
+                  display: flex;
+                  flex-wrap: wrap;
+                  /* Đảm bảo các <li> có thể xuống dòng khi cần */
+                  padding: 0;
+                  margin: 0;
+                  list-style: none;
+                  width: 100%;
+  
+                  li {
+                      flex: 1 1 auto;
+                      text-align: center;
+                      padding: 10px;
+                      background-color: #f8f8f8;
+                      border-radius: 5px;
+                      transition: box-shadow 0.5s ease-in-out;
+                      white-space: nowrap;
+                      max-height: 50px;
+                      font-size: 18px;
+                      margin-top: 10px;
+                      &:hover {
+                          background-color: #ff0000;
+                          color: white;
+                          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+                      }
+                  }
+              }
+          }
+      }
+  }
+}
+
+// Dành cho điện thoại lớn hơn hoặc bằng 480px
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+  .main-header {
+      .logo-img {
+          display: none;
+      }
+
+      .icon-group a {
+          span {
+              display: none;
+          }
+      }
+
+      .dropdown-menu-custom {
+          width: 56px;
+          height: 500px;
+          ul {
+              li {
+                  padding: 10px 0;
+              }
+          }
+
+          .hovered-category {
+              width: 460px;
+              height: 500px;
+              @media (min-width: 480px) and (max-width: 540px) {
+                  width: min(460px, 80vw);
+              }
+          }
+      }
+  }
+}
+
+// Dành cho tablet (màn hình từ 768px trở lên)
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .main-header {
+      .dropdown-menu-custom {
+          width: 192px;
+          height: 500px;
+
+          ul {
+              li {
+                  padding: 5px 0;
+              }
+          }
+
+          .hovered-category {
+              width: 500px;
+              height: 500px;
+
+              // ul {
+              //     display: grid;
+              //     grid-template-columns: repeat(4, 1fr);
+              //     gap: 10px;
+              // }
+          }
+      }
+  }
+}
+
+// Dành cho laptop nhỏ (màn hình từ 1024px trở lên)
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .main-header {
+      .dropdown-menu-custom {
+          width: 228px;
+          height: 500px;
+
+          ul {
+              li {
+                  padding: 5px 0;
+              }
+          }
+
+          .hovered-category {
+              width: 700px;
+              height: 500px;
+
+              // ul {
+              //     display: grid;
+              //     grid-template-columns: repeat(6, 1fr);
+              //     gap: 10px;
+              // }
+          }
+      }
+  }
+}
+
+// Dành cho desktop (màn hình từ 1200px trở lên)
+@media only screen and (min-width: 1200px) {
+  .main-header {
+      .dropdown-menu-custom {
+          width: 228px;
+          height: 500px;
+
+          ul {
+              li {
+                  padding: 5px 0;
+              }
+          }
+
+          .hovered-category {
+              width: 912px;
+              height: 500px;
+              @media (min-width: 1300px) and (max-width: 1600px) {
+                  width: min(1100px, 95vw);
+              }
+          }
+      }
+  }
+}

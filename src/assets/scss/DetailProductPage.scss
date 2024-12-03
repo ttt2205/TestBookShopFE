@@ -1,0 +1,972 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --main-color: rgba(233, 227, 227, 0.66);
+    /* Màu chính */
+    --font-size: 16px;
+    /* Kích thước chữ */
+    --padding: 10px;
+    /* Khoảng cách */
+    --btn-buy-color: red;
+    --text-box-discount: red;
+    --btn-add-to-cart-color: white;
+    --link-color: #2489F4;
+}
+
+body {
+    background-color: var(--main-color);
+    margin: 0;
+}
+
+.breadscumb-container {
+    position: relative;
+    height: 4vh;
+    background-color: var(--main-color);
+    width: 96%;
+    margin: 0 auto;
+
+    .breadscumb-content {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: var(--main-color);
+        height: 100%;
+        width: 100%;
+        margin-left: 20px;
+
+        ol {
+            display: flex;
+            flex-direction: row;
+            width: auto;
+            list-style-type: none;
+            padding-left: 0;
+
+            li {
+                margin-left: 10px;
+
+                a {
+                    text-decoration: none;
+                    color: black
+                }
+            }
+        }
+    }
+}
+
+.product-essential {
+    background-color: var(--main-color);
+    width: 95%;
+    min-height: 100vh;
+    height: auto;
+    display: flex;
+    position: relative;
+    margin: 0 auto;
+
+    .product-essential-content-media-parent {
+        background-color: var(--main-color);
+        width: 40%;
+        height: auto;
+        max-height: 100vh;
+        /* Để chiều cao tự điều chỉnh */
+        position: relative;
+        /* Không dùng absolute */
+        display: flex;
+        align-items: center;
+        /* Căn giữa theo chiều dọc nếu cần */
+
+        .product-essential-media {
+            background-color: white;
+            width: 100%;
+            height: 100%;
+            border-radius: 5%;
+            margin: 0 auto;
+            /* Đảm bảo căn giữa */
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .product-view-media-addtocard {
+                position: absolute;
+                top: 0;
+                background-color: white;
+                width: 100%;
+                min-height: 70%;
+                height: auto;
+                border-radius: 5%;
+
+                .product-view-image {
+                    position: absolute;
+                    top: 0;
+                    background-color: white;
+                    width: 100%;
+                    min-height: 85%;
+                    height: auto;
+                    border-radius: 5% 5% 0;
+
+                    .product-view-image-product {
+                        position: absolute;
+                        top: 0;
+                        left: 50%;
+                        transform: translate(-50%, 0);
+                        -ms-transform: translate(-50%, 0);
+                        background-color: white;
+                        width: 50%;
+                        height: 80%;
+                        // clip-path: polygon(0% 3%, 3% 0%, 97% 0%, 100% 3%, 100% 100%, 0 100%);
+                        /* Hình gấp khúc ở góc phải */
+                        // border-radius: 5% 5% 0 0;
+
+                        img {
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                            -ms-transform: translate(-50%, -50%);
+                            width: 100%;
+                            height: 90%;
+                            object-fit: fill;
+                        }
+                    }
+
+                    .product-view-thumbnail-parent {
+                        position: absolute;
+                        bottom: 0;
+                        // left: 0;
+                        width: 100%;
+                        height: 20%;
+                        background-color: white;
+                        border-radius: 10px;
+
+                        .thumbnail-tabs {
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 100%;
+                            background-color: white;
+                            border-radius: 10px;
+
+                            .tabs-product-view {
+                                position: absolute;
+                                top: 50%;
+                                left: 50%;
+                                transform: translate(-50%, -50%);
+                                width: 96%;
+                                height: 100%;
+                                background-color: white;
+                                display: flex;
+
+                                .tab-product-view {
+                                    position: absolute;
+                                    top: 50%;
+                                    left: 0;
+                                    width: 100%;
+                                    height: 100%;
+                                    background-color: white;
+                                    transform: translateY(-50%);
+                                    display: flex;
+                                    column-gap: 5px;
+
+                                    .product-view {
+                                        width: 25%;
+                                        height: 100%;
+                                        background-color: white;
+
+                                        .product-view-image-box {
+                                            position: relative;
+                                            width: 100%;
+                                            height: 100%;
+                                            background-color: white;
+
+                                            .product-view-image-container {
+                                                position: absolute;
+                                                width: 90%;
+                                                height: 90%;
+                                                top: 50%;
+                                                left: 50%;
+                                                transform: translate(-50%, -50%);
+                                                background-color: white;
+
+                                                .product-view-image-content {
+                                                    position: absolute;
+                                                    width: 100%;
+                                                    height: 100%;
+                                                    cursor: pointer;
+
+                                                    .image {
+                                                        position: absolute;
+                                                        top: 0;
+                                                        left: 50%;
+                                                        transform: translate(-50%, 0);
+                                                        width: 90%;
+                                                        height: 100%;
+                                                        background-color: white;
+
+                                                        img {
+                                                            position: absolute;
+                                                            top: 50%;
+                                                            left: 50%;
+                                                            transform: translate(-50%, -50%);
+                                                            width: 70%;
+                                                            height: 100%;
+                                                            object-fit: fill;
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+                            // customize button prev and next
+                            .carousel-control-prev {
+                                position: absolute;
+                                top: 40%;
+                                transform: translate(-50%, -50%);
+                                height: 10%;
+                                width: auto;
+                                border-radius: 50%;
+                            }
+
+                            .carousel-control-next {
+                                position: absolute;
+                                top: 40%;
+                                transform: translate(50%, -50%);
+                                height: 10%;
+                                width: auto;
+                                border-radius: 50%;
+                            }
+
+                            .carousel-prev-icon {
+                                background: white;
+                                color: black;
+                                border-radius: 50%;
+                            }
+
+                            .carousel-next-icon {
+                                background: white;
+                                color: black;
+                                border-radius: 50%;
+                            }
+                        }
+                    }
+                }
+
+                .product-view-add-box {
+                    position: absolute;
+                    bottom: 0;
+                    background-color: white;
+                    width: 100%;
+                    height: 15%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    .btn-add-box {
+                        font-size: 14px;
+                        font-weight: 600;
+                        width: 40%;
+                        border-radius: 10px;
+                        height: auto;
+                        min-height: 60%;
+                    }
+
+                    #btn-add-to-card {
+                        margin-right: 10px;
+                        color: red;
+                        background-color: white;
+                        border: 1px red solid;
+
+                        span {
+                            margin-left: 4px;
+                        }
+                    }
+
+                    #btn-buy {
+                        color: white;
+                        background-color: var(--btn-buy-color);
+                    }
+                }
+            }
+
+            .product-view-policy {
+                position: absolute;
+                bottom: 0;
+                background-color: white;
+                width: 100%;
+                height: 30%;
+                border-radius: 0 0 5% 5%;
+            }
+        }
+
+        .product-view-policy-content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 5%;
+
+            .product-view-policy-desktop {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: white;
+                border-radius: 5%;
+
+                .product-view-policy-title {
+                    width: 100%;
+                    height: 20%;
+                    background-color: white;
+                    display: flex;
+                    align-items: center;
+
+                    strong {
+                        margin-left: 1rem;
+                        text-align: center;
+                    }
+                }
+
+                .product-view-policy-attribute {
+                    width: 100%;
+                    height: 80%;
+                    background-color: white;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: space-around;
+                    border-radius: 5%;
+
+                    .product-view-policy-item {
+                        background-color: white;
+                        width: 100%;
+                        height: auto;
+
+                        .icon-policy {
+                            margin-left: 1rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .product-essential-content-detail-parent {
+        background-color: var(--main-color);
+        width: 60%;
+        height: auto;
+
+        .product-essential-content-detail {
+            background-color: var(--main-color);
+            width: 100%;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+
+            .product-infor-container {
+                background-color: white;
+                border-radius: 10px;
+                width: 96%;
+                height: auto;
+                margin: auto;
+
+                .product-infor-content {
+                    background-color: white;
+                    width: 96%;
+                    height: auto;
+                    margin: 10px auto;
+
+                    .name-product {
+                        width: 100%;
+                        overflow-wrap: break-word;
+                    }
+
+                    .suplier-and-author {
+                        margin: 0;
+                        display: flex;
+                        width: 100%;
+                        height: auto;
+                        background-color: white;
+
+                        .suplier {
+                            width: 50%;
+                            height: auto;
+                            overflow-wrap: break-word;
+
+                            p {
+                                margin: 0;
+                            }
+                        }
+
+                        .author {
+                            width: 50%;
+                            height: auto;
+                            overflow-wrap: break-word;
+
+                            p {
+                                margin: 0;
+                            }
+                        }
+                    }
+
+                    .publisher {
+                        width: 100%;
+                        height: auto;
+                        background-color: white;
+
+                        p {
+                            margin: 0;
+                        }
+                    }
+
+                    .vote-and-sale {
+                        display: flex;
+                        width: 100%;
+                        height: auto;
+                        background-color: white;
+
+                        .vote {
+                            margin-right: 10px;
+                        }
+
+                        .sale {
+                            display: flex;
+
+                            span {
+                                margin-left: 10px;
+                            }
+                        }
+                    }
+
+                    .price-and-discount {
+                        display: flex;
+                        align-items: center;
+
+                        .price-discount h2 {
+                            color: red;
+                            margin-right: 10px;
+                        }
+
+                        .price-product {
+                            height: 100%;
+                            margin: 0;
+
+                            p {
+                                margin: 0;
+                                color: black;
+                                text-decoration-line: line-through;
+                            }
+                        }
+
+                        .discount {
+                            background-color: var(--text-box-discount);
+                            color: white;
+                            height: 100%;
+                            width: 3rem;
+                            padding: 0 auto;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            border-radius: 6px;
+                            margin-left: 10px;
+                        }
+
+                    }
+
+                    .out-of-stock {
+                        display: block;
+                        background-color: rgba(255, 0, 0, 0.4);
+                        color: black;
+                    }
+                }
+            }
+
+            .delivery-infor-container {
+                background-color: white;
+                border-radius: 10px;
+                width: 96%;
+                height: auto;
+                margin: 10px auto;
+
+                .delivery-infor-content {
+                    background-color: white;
+                    width: 96%;
+                    height: auto;
+                    margin: 10px auto;
+
+                    .delivery-address {
+                        display: flex;
+
+                        .address {
+                            display: flex;
+                            max-width: 60%;
+
+                            p {
+                                margin: 0;
+                                width: 100%;
+                                white-space: nowrap;
+                                /* Prevents wrapping */
+                                overflow: hidden;
+                                /* Ensures the text doesn't overflow its container */
+                                text-overflow: ellipsis;
+                                /* Displays the ellipsis (...) for overflowing text */
+                            }
+
+                            strong {
+                                white-space: nowrap;
+                                overflow: hidden;
+                                text-overflow: ellipsis;
+                            }
+                        }
+
+                        .change-address {
+                            margin-left: 15px;
+
+                            .btn-change-address {
+                                color: #2489F4;
+                            }
+                        }
+                    }
+
+                    .expect-delivery-detail {
+                        display: flex;
+                        height: auto;
+                        width: 100%;
+
+                        .icon-delivery {
+                            height: 100%;
+                            width: auto;
+                            margin-right: 1rem;
+                        }
+
+                        .expect-time-delivery {
+                            display: flex;
+                            flex-direction: column;
+                            width: auto;
+                            height: auto;
+                        }
+                    }
+
+                    .quantity-to-buy {
+                        display: flex;
+                        margin-top: 1rem;
+                        align-items: center;
+
+                        .titile-quantity {
+                            margin-right: 2rem;
+                        }
+
+                        .btn-chose-quantity {
+                            display: flex;
+                            border: 1px solid rgba(0, 0, 0, 0.1);
+                            /* Đặt đường viền mỏng */
+                            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+                            /* Làm mờ đường viền */
+                            justify-content: center;
+                            align-items: center;
+                            border-radius: 5px;
+                            height: 80%;
+                            margin: auto 0;
+
+                            .btn-reduce {
+                                width: 2.5rem;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                font-size: 16px;
+                                cursor: pointer;
+                            }
+
+                            .quantity {
+                                width: 2rem;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                font-size: 18px;
+                            }
+
+                            .btn-increment {
+                                width: 2.5rem;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                font-size: 16px;
+                                cursor: pointer;
+                            }
+
+                        }
+                    }
+                }
+            }
+
+            .detail-product-info-container {
+                background-color: white;
+                border-radius: 10px;
+                width: 96%;
+                height: auto;
+                margin: 10px auto;
+
+                .detail-product-info-content {
+                    background-color: white;
+                    width: 96%;
+                    height: auto;
+                    margin: 10px auto;
+
+                    .general-info {
+                        display: flex;
+                        flex-direction: column;
+                        width: 100%;
+
+                        tr {
+                            display: flex;
+                            flex-direction: row;
+                            margin-top: 1rem;
+
+                            th {
+                                width: 30%;
+                                height: 100%;
+                                background-color: white;
+                                font-weight: 400;
+                            }
+
+                            td {
+                                width: 70%;
+                                height: 100%;
+                                background-color: white;
+                                font-weight: 600;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .description-product-container {
+                background-color: white;
+                border-radius: 10px;
+                width: 96%;
+                height: auto;
+                margin: 10px auto;
+
+                .description-product-content {
+                    background-color: white;
+                    width: 96%;
+                    height: auto;
+                    margin: 10px auto;
+
+                    #product_tabs_description_content {
+                        margin-top: 1rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.tabslider-relatedproduct-container {
+    position: relative;
+    width: 94%;
+    height: auto;
+    min-height: 60vh;
+    background-color: white;
+    border-radius: 10px;
+    margin-top: 20px;
+    margin: 10px auto;
+
+    .tabslier-relatedproduct-title {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 15%;
+        background-color: white;
+        display: flex;
+        align-items: center;
+        border-radius: 10px 10px 0 0;
+
+        strong {
+            margin-left: 1rem;
+        }
+    }
+
+    .tabslider-tabs-content-relatedproduct {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 85%;
+        background-color: white;
+        border-radius: 10px;
+
+        .tabslider-tabs-relatedproduct {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: white;
+            border-radius: 10px;
+
+            .tabslider-tabs {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: white;
+                border-radius: 10px;
+
+                .tabs-relatedproduct {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    width: 96%;
+                    height: 100%;
+                    background-color: white;
+                    display: flex;
+
+                    .tab-relatedproduct {
+                        position: absolute;
+                        top: 50%;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        background-color: white;
+                        transform: translateY(-50%);
+                        display: flex;
+                        column-gap: 5px;
+
+                        .relatedproduct {
+                            width: 25%;
+                            height: 100%;
+                            background-color: white;
+
+                            .relatedproduct-image-box {
+                                position: relative;
+                                width: 100%;
+                                height: 60%;
+                                background-color: white;
+
+                                .relatedproduct-image-container {
+                                    position: absolute;
+                                    width: 90%;
+                                    height: 90%;
+                                    top: 50%;
+                                    left: 50%;
+                                    transform: translate(-50%, -50%);
+                                    background-color: white;
+
+                                    .relatedproduct-image-content {
+                                        position: absolute;
+                                        width: 100%;
+                                        height: 100%;
+                                        cursor: pointer;
+                                        background-color: white;
+
+                                        .image {
+                                            position: absolute;
+                                            top: 0;
+                                            left: 50%;
+                                            transform: translate(-50%, 0);
+                                            width: 90%;
+                                            height: 100%;
+                                            background-color: white;
+                                            object-fit: fill;
+
+                                            img {
+                                                position: absolute;
+                                                top: 50%;
+                                                left: 50%;
+                                                transform: translate(-50%, -50%);
+                                                width: 70%;
+                                                height: 100%;
+                                                object-fit: fill;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+                            .relatedproduct-name-container {
+                                position: relative;
+                                width: 100%;
+                                height: 15%;
+                                background-color: white;
+
+                                .relatedproduct-name-content {
+                                    position: absolute;
+                                    width: 100%;
+                                    height: 100%;
+                                    background-color: white;
+
+                                    p {
+                                        width: 90%;
+                                        height: 100%;
+                                        display: -webkit-box;
+                                        /* Định dạng thành các hộp */
+                                        -webkit-line-clamp: 2;
+                                        /* Giới hạn hiển thị 2 dòng */
+                                        -webkit-box-orient: vertical;
+                                        /* Xếp các hộp theo chiều dọc */
+                                        overflow: hidden;
+                                        /* Ẩn phần văn bản bị tràn */
+                                        text-overflow: ellipsis;
+                                        /* Thêm dấu ba chấm nếu tràn */
+                                        margin: auto;
+                                    }
+                                }
+                            }
+
+                            .relatedproduct-price-and-discount-container {
+                                position: relative;
+                                width: 100%;
+                                height: 15%;
+                                background-color: white;
+
+                                .relatedproduct-price-and-discount-content {
+                                    position: absolute;
+                                    width: 100%;
+                                    height: 100%;
+
+                                    .relatedproduct-discount {
+                                        width: 90%;
+                                        height: 50%;
+                                        background-color: white;
+                                        display: flex;
+                                        margin: 0 auto;
+
+                                        #price-now {
+                                            margin-right: 1rem;
+                                            color: var(--text-box-discount);
+                                        }
+
+                                        #discount {
+                                            background-color: var(--text-box-discount);
+                                            color: white;
+                                            height: 90%;
+                                            width: 3rem;
+                                            padding: 0 auto;
+                                            display: flex;
+                                            align-items: center;
+                                            justify-content: center;
+                                            border-radius: 6px;
+                                        }
+                                    }
+
+                                    .relatedproduct-price {
+                                        width: 90%;
+                                        height: 50%;
+                                        background-color: white;
+                                        display: flex;
+                                        margin: 0 auto;
+
+                                        #price {
+                                            margin-right: 1rem;
+                                            color: black;
+                                            text-decoration-line: line-through;
+                                        }
+                                    }
+                                }
+                            }
+
+                            .relatedproduct-rating-container {
+                                position: relative;
+                                width: 100%;
+                                height: 10%;
+                                background-color: white;
+
+                                .relatedproduct-rating-content {
+                                    position: absolute;
+                                    width: 100%;
+                                    height: 100%;
+                                    background-color: white;
+
+                                    .card {
+                                        width: 90%;
+                                        height: 100%;
+                                        background-color: white;
+                                        margin: 0 auto;
+                                        border: none;
+
+                                        .ratings-wrapper {
+                                            width: 100%;
+                                            height: 100%;
+                                            background-color: white;
+                                            display: flex;
+
+                                            .ratings {
+                                                width: 50%;
+                                                height: 100%;
+
+                                                #stars-container {
+                                                    width: 100%;
+                                                    height: 100%;
+                                                    display: flex;
+                                                    justify-content: center;
+                                                    align-items: center;
+                                                }
+
+                                                .rating-color {
+                                                    color: #fbc634 !important;
+                                                }
+                                            }
+
+                                            .review-count {
+                                                width: 50%;
+                                                height: 100%;
+                                                font-weight: 400;
+                                                font-size: 0.9rem !important;
+                                                display: flex;
+                                                justify-content: center;
+                                                align-items: center;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                // customize button prev and next
+                .carousel-control-prev {
+                    position: absolute;
+                    top: 40%;
+                    transform: translate(-50%, -50%);
+                    height: 10%;
+                    width: auto;
+                    border-radius: 50%;
+                }
+
+                .carousel-control-next {
+                    position: absolute;
+                    top: 40%;
+                    transform: translate(50%, -50%);
+                    height: 10%;
+                    width: auto;
+                    border-radius: 50%;
+                }
+
+                .carousel-prev-icon {
+                    background: white;
+                    color: black;
+                    border-radius: 50%;
+                }
+
+                .carousel-next-icon {
+                    background: white;
+                    color: black;
+                    border-radius: 50%;
+                }
+            }
+        }
+    }
+}

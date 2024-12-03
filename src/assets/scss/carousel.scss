@@ -1,0 +1,27 @@
+#carouselImage {
+  .carousel-item {
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+  }
+  .exit-btn {
+    position: absolute;
+    top: -5px;
+    right: 0;
+    background-color: red;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    z-index: 10;
+
+    i {
+      font-size: 10px;
+      color: white;
+    }
+  }
+}
